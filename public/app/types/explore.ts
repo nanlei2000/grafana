@@ -13,6 +13,7 @@ import {
   LogsModel,
   LogsDedupStrategy,
   LoadingState,
+  AbsoluteTimeRange,
 } from '@grafana/ui';
 
 import { Emitter } from 'app/core/core';
@@ -190,6 +191,8 @@ export interface ExploreItemState {
    * Time range for this Explore. Managed by the time picker and used by all query runs.
    */
   range: TimeRange;
+
+  absoluteRange: AbsoluteTimeRange;
   /**
    * Scanner function that calculates a new range, triggers a query run, and returns the new range.
    */
