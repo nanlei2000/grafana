@@ -21,8 +21,8 @@ export const timeEpic: Epic<ActionOf<any>, ActionOf<any>, StoreState> = (
 
       if (absRange) {
         rawRange = {
-          from: timeZone.isUtc ? toUtc(absRange.from) : dateTime(absRange.from),
-          to: timeZone.isUtc ? toUtc(absRange.to) : dateTime(absRange.to),
+          from: timeZone === 'utc' ? toUtc(absRange.from) : dateTime(absRange.from),
+          to: timeZone === 'utc' ? toUtc(absRange.to) : dateTime(absRange.to),
         };
       }
 
